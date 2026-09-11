@@ -1,0 +1,1492 @@
+
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Alessio Rodia – Portfolio</title>
+
+  <style>
+
+    /* =====================================================
+       RESET
+    ===================================================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+    /* =====================================================
+       BODY
+    ===================================================== */
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(
+          circle at 15% 10%,
+          rgba(233, 69, 96, 0.10),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 85% 80%,
+          rgba(127, 143, 166, 0.10),
+          transparent 30%
+        ),
+        #0f1117;
+
+      color: #e6e6e6;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+
+    /* =====================================================
+       LAYOUT
+    ===================================================== */
+
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+
+    /* =====================================================
+       SIDEBAR
+    ===================================================== */
+
+    .sidebar {
+      width: 280px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #171827 0%,
+          #12131d 100%
+        );
+
+      border-right: 1px solid rgba(255,255,255,0.08);
+
+      color: #fff;
+
+      padding: 40px 24px;
+
+      position: sticky;
+      top: 0;
+
+      height: 100vh;
+
+      overflow-y: auto;
+
+      flex-shrink: 0;
+    }
+
+
+    .sidebar h1 {
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+
+
+    .sidebar .sottotitolo {
+      font-size: 0.88rem;
+      color: #9da3b4;
+      margin-bottom: 35px;
+    }
+
+
+    .sidebar h2 {
+      font-size: 0.78rem;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1.5px;
+
+      color: #7f8fa6;
+
+      margin-bottom: 12px;
+
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+
+      padding-bottom: 7px;
+    }
+
+
+    .sidebar ul {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+
+
+    .sidebar li {
+      font-size: 0.9rem;
+      margin-bottom: 9px;
+      color: #c7cbd5;
+    }
+
+
+    .sidebar li strong {
+      color: #fff;
+    }
+
+
+    .sidebar a {
+      color: #c7cbd5;
+      text-decoration: none;
+
+      transition: color 0.2s ease;
+    }
+
+
+    .sidebar a:hover {
+      color: #e94560;
+    }
+
+
+    /* =====================================================
+       MAIN
+    ===================================================== */
+
+    .main {
+      flex: 1;
+
+      padding: 50px;
+
+      max-width: 1050px;
+
+      min-width: 0;
+
+      margin: 0 auto;
+    }
+
+
+    .hero {
+      padding: 35px;
+
+      margin-bottom: 45px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(233, 69, 96, 0.10),
+          rgba(255,255,255,0.025)
+        );
+
+      border: 1px solid rgba(255,255,255,0.08);
+
+      border-radius: 18px;
+
+      box-shadow:
+        0 20px 50px rgba(0,0,0,0.20);
+    }
+
+
+    .hero .badge {
+      display: inline-block;
+
+      padding: 6px 12px;
+
+      border-radius: 999px;
+
+      background: rgba(233, 69, 96, 0.12);
+
+      color: #ff7185;
+
+      font-size: 0.8rem;
+
+      margin-bottom: 15px;
+    }
+
+
+    .hero h2 {
+      border: none !important;
+
+      padding: 0 !important;
+
+      margin-bottom: 12px !important;
+
+      font-size: 2.1rem !important;
+
+      color: #fff !important;
+    }
+
+
+    .hero p {
+      color: #aeb4c2;
+
+      max-width: 750px;
+
+      font-size: 1rem;
+    }
+
+
+    .main h2 {
+      font-size: 1.45rem;
+
+      color: #ffffff;
+
+      margin-bottom: 18px;
+
+      padding-bottom: 8px;
+
+      border-bottom: 2px solid #e94560;
+    }
+
+
+    .main h3 {
+      font-size: 1.12rem;
+
+      color: #ffffff;
+
+      margin-top: 20px;
+
+      margin-bottom: 8px;
+    }
+
+
+    .main p {
+      margin-bottom: 13px;
+
+      font-size: 0.95rem;
+
+      color: #c5c9d3;
+    }
+
+
+    .main ul {
+      margin: 12px 0 12px 20px;
+
+      font-size: 0.95rem;
+
+      color: #c5c9d3;
+    }
+
+
+    .main li {
+      margin-bottom: 7px;
+    }
+
+
+    .periodo {
+      font-size: 0.82rem !important;
+
+      color: #858c9b !important;
+
+      font-style: italic;
+
+      margin-bottom: 10px !important;
+    }
+
+
+    .tag {
+      font-size: 0.8rem !important;
+
+      color: #e94560 !important;
+
+      margin-bottom: 8px !important;
+    }
+
+
+    section {
+      margin-bottom: 48px;
+    }
+
+
+    article {
+      margin-bottom: 32px;
+
+      padding: 22px;
+
+      background: rgba(255,255,255,0.025);
+
+      border: 1px solid rgba(255,255,255,0.06);
+
+      border-radius: 14px;
+
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+
+    article:hover {
+      transform: translateY(-2px);
+
+      border-color: rgba(233,69,96,0.35);
+    }
+
+
+    /* =====================================================
+       PROJECT CARDS
+    ===================================================== */
+
+    .project-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 18px;
+    }
+
+
+    .project-card {
+      padding: 24px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,0.045),
+          rgba(255,255,255,0.015)
+        );
+
+      border: 1px solid rgba(255,255,255,0.07);
+
+      border-radius: 15px;
+
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+
+    .project-card:hover {
+      transform: translateY(-4px);
+
+      border-color: rgba(233,69,96,0.45);
+    }
+
+
+    .project-card h3 {
+      margin-top: 0;
+    }
+
+
+    /* =====================================================
+       VIDEO
+    ===================================================== */
+
+    .video-section {
+      margin-top: 30px;
+
+      padding: 25px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,0.045),
+          rgba(255,255,255,0.015)
+        );
+
+      border-radius: 16px;
+
+      border: 1px solid rgba(255,255,255,0.08);
+
+      box-shadow:
+        0 15px 40px rgba(0,0,0,0.20);
+    }
+
+
+    .video-section h3 {
+      margin-top: 0;
+
+      color: #fff;
+    }
+
+
+    .video-description {
+      color: #aeb4c2 !important;
+    }
+
+
+    .video-wrapper {
+      width: 100%;
+
+      margin-top: 18px;
+    }
+
+
+    .video-section video {
+      display: block;
+
+      width: 100%;
+
+      max-width: 850px;
+
+      margin: 0 auto;
+
+      border-radius: 12px;
+
+      background-color: #000;
+
+      border: 1px solid rgba(255,255,255,0.08);
+
+      /*
+        IMPORTANTE:
+        NON viene impostato muted.
+        L'audio originale dei video rimane disponibile.
+      */
+    }
+
+
+    #video-title {
+      margin: 14px 0;
+
+      text-align: center;
+
+      font-size: 0.9rem;
+
+      color: #858c9b;
+    }
+
+
+    .video-controls {
+      display: flex;
+
+      justify-content: center;
+
+      gap: 12px;
+
+      margin-top: 15px;
+    }
+
+
+    .video-controls button {
+      background-color: #1a1a2e;
+
+      color: white;
+
+      border: 1px solid rgba(255,255,255,0.08);
+
+      padding: 10px 20px;
+
+      border-radius: 8px;
+
+      cursor: pointer;
+
+      font-size: 0.9rem;
+
+      transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+
+    .video-controls button:hover {
+      background-color: #e94560;
+
+      transform: translateY(-2px);
+    }
+
+
+    /* =====================================================
+       CONTACT CARD
+    ===================================================== */
+
+    .contact-card {
+      padding: 25px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(233,69,96,0.10),
+          rgba(255,255,255,0.025)
+        );
+
+      border: 1px solid rgba(233,69,96,0.20);
+
+      border-radius: 15px;
+    }
+
+
+    .contact-card a {
+      color: #ff7185;
+
+      font-weight: 600;
+
+      text-decoration: none;
+    }
+
+
+    .contact-card a:hover {
+      text-decoration: underline;
+    }
+
+
+    /* =====================================================
+       SKILLS
+    ===================================================== */
+
+    .skills {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      margin-top: 15px;
+    }
+
+
+    .skill {
+      padding: 7px 12px;
+
+      border-radius: 999px;
+
+      background: rgba(255,255,255,0.06);
+
+      border: 1px solid rgba(255,255,255,0.08);
+
+      color: #d6dae3;
+
+      font-size: 0.82rem;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    footer {
+      background-color: #11121b;
+
+      color: #8d93a1;
+
+      text-align: center;
+
+      padding: 25px;
+
+      font-size: 0.85rem;
+
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+
+
+    footer h4 {
+      color: #aeb4c2;
+
+      font-weight: normal;
+
+      line-height: 1.8;
+    }
+
+
+    footer a {
+      color: #ff7185;
+
+      text-decoration: none;
+    }
+
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+
+    /* =====================================================
+       RESPONSIVE
+    ===================================================== */
+
+    @media (max-width: 900px) {
+
+      .container {
+        flex-direction: column;
+      }
+
+
+      .sidebar {
+        width: 100%;
+
+        height: auto;
+
+        position: relative;
+
+        padding: 28px 22px;
+
+        border-right: none;
+
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+      }
+
+
+      .sidebar ul {
+        margin-bottom: 20px;
+      }
+
+
+      .main {
+        padding: 30px 22px;
+
+        max-width: 100%;
+      }
+
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      .main {
+        padding: 20px 15px;
+      }
+
+
+      .hero {
+        padding: 23px 18px;
+
+        border-radius: 14px;
+      }
+
+
+      .hero h2 {
+        font-size: 1.65rem !important;
+      }
+
+
+      .main h2 {
+        font-size: 1.25rem;
+      }
+
+
+      article {
+        padding: 18px;
+      }
+
+
+      .video-section {
+        padding: 16px;
+      }
+
+
+      .video-controls {
+        gap: 8px;
+      }
+
+
+      .video-controls button {
+        flex: 1;
+
+        padding: 10px 12px;
+      }
+
+
+      .video-section video {
+        width: 100%;
+
+        border-radius: 9px;
+      }
+
+
+      .skills {
+        gap: 7px;
+      }
+
+
+      .skill {
+        font-size: 0.76rem;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- ===================================================
+       LAYOUT
+  ==================================================== -->
+
+  <div class="container">
+
+
+    <!-- =================================================
+         SIDEBAR
+    ================================================== -->
+
+    <aside class="sidebar">
+
+      <h1>Alessio Rodia</h1>
+
+      <p class="sottotitolo">
+        Studente · Sviluppatore · Appassionato di Tecnologia
+      </p>
+
+
+      <!-- CONTATTI -->
+
+      <h2>Contatti</h2>
+
+      <ul>
+
+        <li>
+          <strong>Email:</strong><br>
+
+          <a href="mailto:devhelos@gmail.com">
+            devhelos@gmail.com
+          </a>
+        </li>
+
+        <li>
+          <strong>GitHub:</strong><br>
+
+          <a
+            href="https://github.com/Helos-dev"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            github.com/Helos-dev
+          </a>
+        </li>
+
+      </ul>
+
+
+      <!-- LINGUE -->
+
+      <h2>Lingue</h2>
+
+      <ul>
+
+        <li>
+          Italiano – Madrelingua
+        </li>
+
+        <li>
+          Inglese – B2
+        </li>
+
+      </ul>
+
+
+      <!-- TECNOLOGIE -->
+
+      <h2>Tecnologie</h2>
+
+      <div class="skills">
+
+        <span class="skill">Python</span>
+
+        <span class="skill">HTML</span>
+
+        <span class="skill">CSS</span>
+
+        <span class="skill">Flask</span>
+
+        <span class="skill">JavaScript</span>
+
+        <span class="skill">API</span>
+
+        <span class="skill">JSON</span>
+
+        <span class="skill">GitHub</span>
+
+      </div>
+
+    </aside>
+
+
+
+    <!-- =================================================
+         MAIN
+    ================================================== -->
+
+    <main class="main">
+
+
+      <!-- HERO -->
+
+      <div class="hero">
+
+        <span class="badge">
+          PORTFOLIO
+        </span>
+
+        <h2>
+          Ciao, sono Alessio.
+        </h2>
+
+        <p>
+          Sono uno studente appassionato di tecnologia e programmazione.
+          Mi piace creare progetti digitali, sperimentare con nuove
+          tecnologie e trasformare le idee in soluzioni concrete.
+        </p>
+
+      </div>
+
+
+
+      <!-- =================================================
+           PROFILO
+      ================================================== -->
+
+      <section>
+
+        <h2>Profilo</h2>
+
+        <p>
+          Sono uno studente appassionato di tecnologia e programmazione,
+          con particolare interesse per lo sviluppo web, l'automazione
+          e la creazione di progetti digitali.
+        </p>
+
+        <p>
+          Mi piace trasformare le idee in soluzioni concrete, imparare
+          nuove tecnologie e affrontare i problemi con curiosità e metodo.
+        </p>
+
+        <p>
+          Attraverso i miei progetti personali ho sviluppato familiarità
+          con Python, HTML, CSS, Flask e la gestione di dati tramite API
+          e JSON.
+        </p>
+
+        <p>
+          <strong>Obiettivo:</strong>
+          sviluppare le mie competenze informatiche attraverso progetti
+          pratici e prime esperienze nel settore tecnologico.
+        </p>
+
+      </section>
+
+
+
+      <!-- =================================================
+           PROGETTI
+      ================================================== -->
+
+      <section>
+
+        <h2>Progetti</h2>
+
+
+        <div class="project-grid">
+
+
+          <!-- BLOXSTRATS -->
+
+          <div class="project-card">
+
+            <h3>
+              BloxStrats Hub
+            </h3>
+
+            <p class="tag">
+              Progetto personale · Sviluppo Web
+            </p>
+
+            <p>
+              Creazione di un sito web dedicato alla community
+              di Blox Fruits, con sezioni informative, database
+              di equipaggiamenti e strumenti per la consultazione
+              dei dati.
+            </p>
+
+            <p>
+              <strong>Tecnologie:</strong>
+              Python, Flask, HTML, CSS, JavaScript, JSON
+            </p>
+
+          </div>
+
+
+          <!-- AUTOMAZIONE -->
+
+          <div class="project-card">
+
+            <h3>
+              Automazione e gestione dati
+            </h3>
+
+            <p class="tag">
+              Progetto personale · Python
+            </p>
+
+            <p>
+              Sviluppo di script per scaricare, elaborare e aggiornare
+              automaticamente dati provenienti da file JSON e servizi
+              online.
+            </p>
+
+            <p>
+              <strong>Tecnologie:</strong>
+              Python, API, JSON, GitHub
+            </p>
+
+          </div>
+
+
+          <!-- SLEEPY -->
+
+          <div class="project-card">
+
+            <h3>
+              Sleepy
+            </h3>
+
+            <p class="tag">
+              Progetto personale · Tecnologia
+            </p>
+
+            <p>
+              Ideazione di un progetto dedicato al relax e al sonno,
+              con riproduzione di suoni ambientali controllabile
+              tramite Python.
+            </p>
+
+            <p>
+              <strong>Tecnologie:</strong>
+              Python, hardware
+            </p>
+
+          </div>
+
+
+          <!-- PROGETTI WEB -->
+
+          <div class="project-card">
+
+            <h3>
+              Progetti Web
+            </h3>
+
+            <p class="tag">
+              HTML · CSS · Flask · JavaScript
+            </p>
+
+            <p>
+              Realizzazione di pagine e applicazioni web responsive,
+              con particolare attenzione all'organizzazione dei dati,
+              all'interfaccia utente e alla compatibilità con
+              dispositivi mobili.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================================
+           VIDEO ARDUINO
+      ================================================== -->
+
+      <section>
+
+        <h2>
+          Progetti Arduino
+        </h2>
+
+
+        <div class="video-section">
+
+          <h3>
+            Video dei miei progetti
+          </h3>
+
+          <p class="video-description">
+            Una raccolta di video dei miei progetti realizzati
+            con Arduino e altre tecnologie.
+          </p>
+
+
+          <div class="video-wrapper">
+
+            <!--
+              IMPORTANTE:
+              non usare muted.
+              In questo modo l'audio originale del file video
+              rimane disponibile.
+            -->
+
+            <video
+              id="player"
+              controls
+              playsinline
+              preload="metadata"
+            >
+
+              Il tuo browser non supporta la riproduzione video.
+
+            </video>
+
+          </div>
+
+
+          <p id="video-title">
+            Video 1 di 4
+          </p>
+
+
+          <div class="video-controls">
+
+            <button
+              id="back"
+              type="button"
+            >
+              ← Indietro
+            </button>
+
+
+            <button
+              id="next"
+              type="button"
+            >
+              Avanti →
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================================
+           ESPERIENZE
+      ================================================== -->
+
+      <section>
+
+        <h2>
+          Esperienze e attività
+        </h2>
+
+
+        <article>
+
+          <h3>
+            Sviluppo di progetti web e strumenti digitali
+          </h3>
+
+          <p class="periodo">
+            2026 – Presente
+          </p>
+
+          <ul>
+
+            <li>
+              Sviluppo di progetti personali per approfondire
+              programmazione e sviluppo web.
+            </li>
+
+            <li>
+              Realizzazione di pagine web con HTML, CSS e Flask.
+            </li>
+
+            <li>
+              Creazione di script Python per la gestione e
+              l'elaborazione dei dati.
+            </li>
+
+            <li>
+              Utilizzo di API e file JSON per organizzare
+              e aggiornare informazioni.
+            </li>
+
+            <li>
+              Risoluzione di problemi tecnici attraverso ricerca,
+              sperimentazione e miglioramento continuo.
+            </li>
+
+            <li>
+              Utilizzo di GitHub per gestire il codice e i progetti.
+            </li>
+
+          </ul>
+
+        </article>
+
+
+        <article>
+
+          <h3>
+            Progetti scolastici e attività di gruppo
+          </h3>
+
+          <p class="periodo">
+            2026 – In corso
+          </p>
+
+          <ul>
+
+            <li>
+              Partecipazione a progetti scolastici e attività di gruppo.
+            </li>
+
+            <li>
+              Organizzazione del lavoro e rispetto delle scadenze.
+            </li>
+
+            <li>
+              Collaborazione con i compagni per raggiungere
+              obiettivi comuni.
+            </li>
+
+            <li>
+              Realizzazione di presentazioni e contenuti digitali.
+            </li>
+
+            <li>
+              Sviluppo della capacità di spiegare argomenti tecnici
+              in modo chiaro.
+            </li>
+
+          </ul>
+
+        </article>
+
+      </section>
+
+
+
+      <!-- =================================================
+           ISTRUZIONE
+      ================================================== -->
+
+      <section>
+
+        <h2>
+          Istruzione
+        </h2>
+
+
+        <article>
+
+          <h3>
+            ITT Enrico Fermi
+          </h3>
+
+          <p class="periodo">
+            2025/26 – Presente
+          </p>
+
+          <p>
+            <strong>Indirizzo:</strong>
+            Elettronica &amp; Elettrotecnica
+          </p>
+
+          <p>
+            Percorso di studi con interesse per l'informatica,
+            la tecnologia e lo sviluppo delle competenze digitali.
+          </p>
+
+          <p>
+            <strong>Principali ambiti di interesse:</strong>
+            programmazione, sistemi informatici, tecnologia
+            e problem solving.
+          </p>
+
+        </article>
+
+      </section>
+
+
+
+      <!-- =================================================
+           COMPETENZE
+      ================================================== -->
+
+      <section>
+
+        <h2>
+          Competenze
+        </h2>
+
+
+        <article>
+
+          <ul>
+
+            <li>
+              <strong>Python</strong> – sviluppo di script
+              e automazione.
+            </li>
+
+            <li>
+              <strong>HTML / CSS</strong> – realizzazione
+              di interfacce web responsive.
+            </li>
+
+            <li>
+              <strong>Flask</strong> – sviluppo di applicazioni web.
+            </li>
+
+            <li>
+              <strong>JavaScript</strong> – interazioni
+              e funzionalità dinamiche.
+            </li>
+
+            <li>
+              <strong>API / JSON</strong> – gestione
+              e organizzazione dei dati.
+            </li>
+
+            <li>
+              <strong>GitHub</strong> – gestione del codice
+              e dei progetti.
+            </li>
+
+          </ul>
+
+        </article>
+
+      </section>
+
+
+
+      <!-- =================================================
+           PASSIONI
+      ================================================== -->
+
+      <section>
+
+        <h2>
+          Passioni
+        </h2>
+
+
+        <article>
+
+          <ul>
+
+            <li>
+              <strong>Programmazione</strong> –
+              creare progetti e imparare nuove tecnologie.
+            </li>
+
+            <li>
+              <strong>Tecnologia</strong> –
+              scoprire strumenti, innovazioni e soluzioni digitali.
+            </li>
+
+            <li>
+              <strong>Videogiochi</strong> –
+              interesse per il mondo videoludico e le community online.
+            </li>
+
+            <li>
+              <strong>Musica</strong> –
+              ascolto e scoperta di nuovi generi musicali.
+            </li>
+
+            <li>
+              <strong>Apprendimento</strong> –
+              curiosità e voglia di migliorare continuamente.
+            </li>
+
+          </ul>
+
+        </article>
+
+      </section>
+
+
+
+      <!-- =================================================
+           CONTATTI
+      ================================================== -->
+
+      <section>
+
+        <h2>
+          Contatti
+        </h2>
+
+
+        <div class="contact-card">
+
+          <p>
+            Hai un progetto, una proposta o vuoi semplicemente
+            contattarmi?
+          </p>
+
+          <p>
+            <strong>Email:</strong><br>
+
+            <a href="mailto:devhelos@gmail.com">
+              devhelos@gmail.com
+            </a>
+          </p>
+
+          <p>
+            Puoi anche trovare i miei progetti su GitHub.
+          </p>
+
+        </div>
+
+      </section>
+
+
+    </main>
+
+  </div>
+
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer>
+
+    <h4>
+
+      © 2026 Alessio Rodia · Portfolio
+
+      <br>
+
+      Email:
+      <a href="mailto:devhelos@gmail.com">
+        devhelos@gmail.com
+      </a>
+
+      ·
+
+      GitHub:
+      <a
+        href="https://github.com/Helos-dev"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Helos-dev
+      </a>
+
+      <br>
+
+      Portfolio personale · Disponibile per nuove opportunità
+
+    </h4>
+
+  </footer>
+
+
+
+  <!-- =====================================================
+       VIDEO SCRIPT
+  ====================================================== -->
+
+  <script>
+
+    /*
+      Elenco dei video.
+
+      IMPORTANTE:
+      i file video devono trovarsi nella stessa cartella
+      del file HTML, oppure devi modificare i percorsi.
+    */
+
+    const videos = [
+
+      "WhatsApp Video 2026-08-03 at 21.10.58.mp4",
+
+      "WhatsApp Video 2026-08-03 at 21.10.59.mp4",
+
+      "WhatsApp Video 2026-08-08 at 00.57.44.mp4",
+
+      "WhatsApp Video 2026-08-10 at 22.11.46.mp4"
+
+    ];
+
+
+    let index = 0;
+
+
+    const player =
+      document.getElementById("player");
+
+
+    const title =
+      document.getElementById("video-title");
+
+
+    const nextButton =
+      document.getElementById("next");
+
+
+    const backButton =
+      document.getElementById("back");
+
+
+    function loadVideo(i) {
+
+      index = i;
+
+
+      player.src = videos[index];
+
+
+      title.textContent =
+        `Video ${index + 1} di ${videos.length}`;
+
+
+      player.load();
+
+    }
+
+
+    nextButton.addEventListener(
+      "click",
+      () => {
+
+        index =
+          (index + 1) % videos.length;
+
+        loadVideo(index);
+
+      }
+    );
+
+
+    backButton.addEventListener(
+      "click",
+      () => {
+
+        index =
+          (index - 1 + videos.length)
+          % videos.length;
+
+        loadVideo(index);
+
+      }
+    );
+
+
+    /*
+      Carica il primo video.
+
+      Non viene usato:
+        muted
+        volume = 0
+        autoplay
+
+      Quindi l'audio originale del video
+      rimane disponibile.
+    */
+
+    loadVideo(0);
+
+  </script>
+
+
+</body>
+
+</html>
+
